@@ -33,10 +33,12 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.humanize',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'color_liker'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -68,6 +70,12 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATE_DIRS = (
+    '/Users/chris/django/bbc/ajax_demo/color_liker/templates',
+    '/Users/chris/django/bbc/ajax_demo/color_liker/templates/',
+    '../color_liker/templates'
+)
+
 WSGI_APPLICATION = 'ajax_demo.wsgi.application'
 
 
@@ -76,8 +84,13 @@ WSGI_APPLICATION = 'ajax_demo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ajaxtest',
+        'USER': 'ajaxtest',
+        'PASSWORD': 'ajaxtest',
+        'HOST': "localhost",  # Empty for localhost through domain sockets or
+                              # '127.0.0.1' for localhost through TCP.
+        'PORT': '',           # Set to empty string for default.
     }
 }
 
@@ -99,4 +112,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/color_liker/static/'
+STATIC_ROOT = ''
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+    '/Users/Chris/django/bbc/ajax_demo/static',
+)
+
