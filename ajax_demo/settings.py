@@ -85,9 +85,9 @@ WSGI_APPLICATION = 'ajax_demo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'betterbusinesscase',
-        'USER': 'betterbusinesscase',
-        'PASSWORD': 'betterbusinesscase',
+        'NAME': 'ajaxtest',
+        'USER': 'ajaxtest',
+        'PASSWORD': 'ajaxtest',
         'HOST': "localhost",  # Empty for localhost through domain sockets or
                               # '127.0.0.1' for localhost through TCP.
         'PORT': '',           # Set to empty string for default.
@@ -113,9 +113,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/color_liker/static/'
-STATIC_ROOT = ''
+STATIC_ROOT = '/var/www/static'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
-    '/Users/Chris/django/bbc/ajax_demo/static',
+    '/var/www/static',
 )
 
