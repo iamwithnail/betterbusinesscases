@@ -115,7 +115,9 @@ USE_TZ = True
 STATIC_URL = '/color_liker/static/'
 STATIC_ROOT = '/var/www/static'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-    '/var/www/static',
+    #Put strings here, like "/home/html/static" or "C:/www/django/static".
+    #Always use forward slashes, even on Windows.
+    #Don't forget to use absolute paths, not relative paths.
+    ("assets", BASE_DIR + "/static"),
+    os.path.join('static'),
 )
-
