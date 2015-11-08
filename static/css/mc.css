@@ -1,0 +1,139 @@
+body {
+	background-color: #8fcb9b;
+	color: #22181C;
+}
+
+a, p, textarea {
+	font-family: 'Droid Serif', serif;
+	font-size: 14px;
+	text-align: justify;
+	text-decoration: none;
+}
+
+a:focus, a:active, a:hover {
+	color: #0b6e4f;
+	text-decoration: underline;
+}
+
+a {
+	color: #8fcb9b;
+}
+
+h1, h2, h3, h4, h5, table {
+	font-family: 'Arimo', sans-serif;
+	text-align: center;
+	font-weight: 700;
+	color: #0b6e4f;
+}
+
+h1 {
+	font-size: 32px;
+	padding-top: 1em;
+}
+
+h2 {
+	font-size: 28px;
+}
+
+h3 {
+	font-size: 24px;
+	text-align: left;
+}
+
+h4 {
+	font-size: 20px;
+	text-align: justify;
+	clear: both;
+	padding: 2em 0 0 0;
+	margin: none;
+}
+
+h5 {
+	font-size: 18px;
+	text-align: justify;
+	clear: both;
+	padding: 0;
+	margin: 0;
+}
+
+table {
+	font-weight: 
+}
+
+hr {
+	clear: both;
+	width: 90%;
+	margin: 50px 0;
+}
+
+ul {
+	margin: none;
+	padding: none;
+	clear: both;
+}
+
+li {
+	float: left;
+	padding: 1em;
+	border: 1px;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.button {
+	clear: both;
+	text-align: center;
+	padding: 0.5em 1em;
+	margin: 0 auto 1em auto;
+	display: block;
+	color: #fff;
+	background-color: #8fcb9b;
+	border-color: #0b6e4f;
+}
+
+.button a:focus, a:hover, a:active {
+	text-decoration: none;
+}
+
+.wrapper {
+	background-color: #fff;
+	opacity: .9;
+	width: 90%;
+	margin: 0 auto;
+	padding: 0 1em;
+}
+
+.main {
+	width: 90%;
+	margin: 0 auto;
+	padding: 0 2em;
+}
+
+textarea {
+	width: 60%;
+	margin: 0 auto;
+	padding: 10px;
+	min-height: 150px;
+	border-color: #0b6e4f;
+}
+
+table {
+	width: 90%;
+	text-align: left;
+	font-weight: 400;
+	font-family: 'Droid Serif', serif;
+}
+
+th {
+	max-width: 40%;
+	font-family: Arimo;
+}
+
+td {
+	text-align: center;
+	font-size: 14px;
+	padding: 3px 0;
+	color: #22181C;
+}
