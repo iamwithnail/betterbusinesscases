@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'color_liker'
+    'color_liker',
+    'case'
 )
 
 MIDDLEWARE_CLASSES = (

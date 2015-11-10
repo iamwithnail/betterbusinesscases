@@ -1,18 +1,5 @@
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Better Business Cases tool">
-    <meta name="author" content="thenuanced.com">
-    <link rel="icon" href="favicon.ico">
-    <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/mc.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Arimo:400,700|Droid+Serif' rel='stylesheet' type='text/css'>
-    <title>Better Business Cases</title>
-  </head>
-  <body>
+{% extends 'case/base.html' %}
+    {% block content %}
     <div class="wrapper">
       <h1>Better Business Cases tool</h1>
       <h5>Here is a super brief overview of what better business cases are about.</h5>
@@ -22,8 +9,8 @@
       <p>For each dimension, you will complete four programme options: do nothing (baseline); minimum work; intermediate work; ambitious work.</p>
       <p>You will then score each scenario against the five criteria of good business cases.</p>
       <p>The output will be the best business case.</p>
-      <a href="dimension-1.html"><input type="submit" value="Go" class="button"></a>
+      <a href="/case/dimension_1"><input type="submit" value="Go" class="button"></a>
       <br>
     </div>
-  </body>
-</html>
+
+    {% endblock %}
