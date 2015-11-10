@@ -70,10 +70,13 @@ TEMPLATES = [
     },
 ]
 
+APPEND_SLASH = True
+
 TEMPLATE_DIRS = (
     '/Users/chris/django/bbc/ajax_demo/color_liker/templates',
     '/Users/chris/django/bbc/ajax_demo/color_liker/templates/',
-    '../color_liker/templates'
+    '../color_liker/templates',
+    '../case/templates'
 )
 
 WSGI_APPLICATION = 'ajax_demo.wsgi.application'
