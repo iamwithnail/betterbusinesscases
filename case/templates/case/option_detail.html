@@ -1,0 +1,9 @@
+{% extends 'case/base.html' %}
+
+{% block content %}
+        <div>
+        <a class="btn btn-default" href="{% url 'case:options_edit' pk=option.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h1>{{ option.option_type }}</h1>
+        <p>{{ option.text|linebreaks }}</p>
+    </div>
+{% endblock %}

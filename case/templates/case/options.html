@@ -1,32 +1,28 @@
 {% extends 'case/base.html' %}
     {% block content %}
-    <div class="wrapper">
+        <div class="wrapper" xmlns="http://www.w3.org/1999/html">
       <h1>Better Business Cases</h1>
-      <h2>Scale, Scope &amp; Location</h2>
-      <p>Here is some info about Dimension 1. What it means, what type of thing you should put for your minimum, intermediate and ambitious options, why your baseline option is needed. An idea of how much you should write for each box.</p>
-      <form action="{% url 'case:options' option.text %}" method="post" class="main">
-        <h3>Baseline</h3>
-        {% csrf_token %}
-          <input type="text" id="1-baseline" name="text" id="1-baseline" placeholder="Fill in a brief description of your baseline"/>
-          <input type="hidden" name ="strength" value="basic"/>
-          <input type="hidden" name ="option_type" value="scale"/>
-          <input type="submit">
-        </form>
-        <h3>Minimum</h3>
-        <textarea id="1-minimum" placeholder="Fill in a brief description of your minimum option"></textarea>
-        <h3>Intermediate</h3>
-        <textarea id="1-intermediate" placeholder="Fill in a brief description of your intermediate option"></textarea>
-        <h3>Ambitious</h3>
-        <textarea id="1-ambitious" placeholder="Fill in a brief description of your ambitious option"></textarea>
-        <br>
-        <a href="/case/scoring_1/"><input value="Next" class="button"></a>
-        <!--needs some kind of submit action added but can't without a database & a server-side redirect -->
-        <br>
-      </form>
+        {% if dimension %}
+            <h2> {{ dimension }}</h2>
+        {% else %}
+            <h2>Summary Page</h2>
+        {% endif %}
+
+        {% if dimension %}
+            The options below will have an 'edit' button next to them.
+        {% for option in options %}
+            <p><span>{{ option.strength }}</span> <span>{{ option.text }}</span> <a href="/case/options/{{ option.pk }}/edit/">Edit me</a></p>
+        {% endfor %}
+            <p> And we should also have an  <a href="{% url 'case:options_new' dimension %}" class="top-menu"><span class="glyphicon glyphicon-plus">'add' button to add </span></a>a new one. </p>
+        {% else %}
+      <p>Click through to see detail for each dimension of the case.</p>
+        <p> Make these into nice big buttons?</p>
+        <p> 'Entries field' will be made dynamic</p>
+        <h3><a href="/case/options/scale/"> Scope and Scale</a> <span> 0 entries </span></h3>
+        <h3><a href="/case/options/delivery/"> Delivery</a> <span> 0 entries </span></h3>
+        <h3><a href="/case/options/speed/"> Speed</a> <span> 0 entries </span></h3>
+        <h3><a href="/case/options/fourth/"> Fourth Option</a><span> 0 entries </span> </h3>
+        <h3><a href="/case/options/fifth/"> Fifth Option</a> <span> 0 entries </span></h3>
+        {% endif %}
     </div>
    {% endblock %}
-
-
-option_type = models.CharField(max_length=8, choices=OPTION_TYPES)
-    strength = models.CharField(max_length=5, choices=STRENGTH)
-    text = models.TextField()
