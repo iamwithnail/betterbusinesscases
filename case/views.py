@@ -55,6 +55,10 @@ def options_detail(request, pk):
     return render(request, 'case/option_detail.html', {'option': option})
 
 
+def graphtest(request):
+    return render(request, 'case/highcharts.html',)
+
+
 def scoring(request, score_number):
     """Toggle "like" for a single color, then refresh the color-list page."""
     """color = None
