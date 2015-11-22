@@ -4,9 +4,14 @@
       <h1>Better Business Cases</h1>
       <h2>Scale, Scope &amp; Location</h2>
       <p>Here is some info about Dimension 1. What it means, what type of thing you should put for your minimum, intermediate and ambitious options, why your baseline option is needed. An idea of how much you should write for each box.</p>
-      <form class="main">
+      <form action="{% url 'case:options' option.text %}" method="post" class="main">
         <h3>Baseline</h3>
-        <textarea id="1-baseline" placeholder="Fill in a brief description of your baseline"></textarea>
+        {% csrf_token %}
+          <input type="text" id="1-baseline" name="text" id="1-baseline" placeholder="Fill in a brief description of your baseline"/>
+          <input type="hidden" name ="strength" value="basic"/>
+          <input type="hidden" name ="option_type" value="scale"/>
+          <input type="submit">
+        </form>
         <h3>Minimum</h3>
         <textarea id="1-minimum" placeholder="Fill in a brief description of your minimum option"></textarea>
         <h3>Intermediate</h3>
@@ -20,3 +25,8 @@
       </form>
     </div>
    {% endblock %}
+
+
+option_type = models.CharField(max_length=8, choices=OPTION_TYPES)
+    strength = models.CharField(max_length=5, choices=STRENGTH)
+    text = models.TextField()
