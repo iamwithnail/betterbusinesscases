@@ -12,9 +12,8 @@ urlpatterns = patterns('',
     url(r'^options/$', 'case.views.options_main'),
     #url(r'^dimension_(?P<dimension_number>\d+)/$', 'case.views.dimension'),
     url(r'^scoring_(?P<score_number>\d+)/$', 'case.views.scoring'),
-    url(r'^graph/$', 'case.views.graphtest'),
-
-
+    url(r'^benefitsgraph/$', 'case.views.benefitsgraph'),
+    url(r'^summarygraph/$', 'case.views.summarygraph'),
     #url(r'^score/(?P<option>[^/]+)/$', ('case.views.scoring')),
     url(r'^', 'case.views.index'),
 )

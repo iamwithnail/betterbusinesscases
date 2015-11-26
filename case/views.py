@@ -1,15 +1,26 @@
 from django.shortcuts import render_to_response, render, redirect, get_object_or_404
 from time import timezone
 # Create your views here.
+from .models import Option, OPTION_TYPES
+
+def count_options():
+    o = Option.objects.all()
+    results = {}
+    for selection in OPTION_TYPES:
+        results.update({selection[0]: o.filter(option_type=selection[0]).count()})
+    return results
 
 
 def options_main(request, dimension=""):
     from django.shortcuts import render
     if not dimension:
-        return render(request, "case/options.html")
+        counts = count_options()
+        print counts
+        return render(request, "case/options.html", {"counts": counts})
     else:
         from .models import Option
         options = Option.objects.filter(option_type=dimension)
+
         return render(request, "case/options.html", {"options": options, "dimension": dimension})
 
 
@@ -18,7 +29,6 @@ def options_new(request, dimension=""):
     from .forms import OptionForm
     if request.method == "POST":
         form = OptionForm(request.POST)
-        option = form.save()
         if form.is_valid():
             option = form.save(commit=False)
 
@@ -26,10 +36,8 @@ def options_new(request, dimension=""):
     else:
         if dimension:
             form = OptionForm(initial={"option_type": dimension})
-            print "WITH DIMENSION"
         else:
             form = OptionForm
-            print "WITHOUT"
     return render(request, 'case/option_edit.html', {'form': form,  "option": dimension})
 
 
@@ -55,9 +63,12 @@ def options_detail(request, pk):
     return render(request, 'case/option_detail.html', {'option': option})
 
 
-def graphtest(request):
-    return render(request, 'case/highcharts.html',)
+def benefitsgraph(request):
+    return render(request, 'case/benefitsgraph.html',)
 
+
+def summarygraph(request):
+    return render(request, 'case/summarygraph.html',)
 
 def scoring(request, score_number):
     """Toggle "like" for a single color, then refresh the color-list page."""

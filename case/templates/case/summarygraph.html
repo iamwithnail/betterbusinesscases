@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+</head>
+<body>
+<!-- Still to do - make this render as many inputs as I pass it (maybe last) - dynamically render the info passed to it
+<!-- Work out why the Z axis thing is doing such strange stuff... -->
+
+<script>
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Total Capital Build Costs (£) including capital contingency'
+        },
+        tooltip: {
+    formatter: function () {
+        return 'Spend: £<b>' + Highcharts.numberFormat(this.point.spend,0,'.',',')+'</b>';
+    }
+},
+
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+                name: 'Brands',
+                colorByPoint: true,
+                data: [{
+                    name: 'ADG',
+                    y: 18,
+                    spend: '3909444',
+                    drilldown: 'ADG'
+                }, {
+                    name: 'Llangors',
+                    y: 15,
+                    spend: '3376563',
+                    sliced: true,
+                    selected: true,
+                    drilldown: 'Llangors'
+
+                }, {
+                    name: 'Clyro',
+                    y: 16,
+                    spend: '3393088',
+                    drilldown: 'Clyro',
+
+                }, {
+                    name: 'Talgarth',
+                    y: 24,
+                    spend: '5348040',
+                    drilldown: 'Talgarth'
+                }, {
+                    name: 'Hay',
+                    y: 27,
+                    spend: 5926852,
+                    drilldown: 'Hay'
+                }]
+        }],
+        drilldown: {
+            series: [{
+                name: 'ADG',
+                id: 'ADG',
+                data: [
+                    ['v11.0', 24.13],
+                    ['v8.0', 17.2],
+                    ['v9.0', 8.11],
+                    ['v10.0', 5.33],
+                    ['v6.0', 1.06],
+                    ['v7.0', 0.5]
+                ]
+            }, {
+                name: 'Llangors',
+                id: 'Llangors',
+                data: [
+                    ['v40.0', 5],
+                    ['v41.0', 4.32],
+                    ['v42.0', 3.68],
+                    ['v39.0', 2.96],
+                    ['v36.0', 2.53],
+                    ['v43.0', 1.45],
+                    ['v31.0', 1.24],
+                    ['v35.0', 0.85],
+                    ['v38.0', 0.6],
+                    ['v32.0', 0.55],
+                    ['v37.0', 0.38],
+                    ['v33.0', 0.19],
+                    ['v34.0', 0.14],
+                    ['v30.0', 0.14]
+                ]
+            }, {
+                name: 'Talgarth',
+                id: 'Talgarth',
+                data: [
+                    ['v35', 2.76],
+                    ['v36', 2.32],
+                    ['v37', 2.31],
+                    ['v34', 1.27],
+                    ['v38', 1.02],
+                    ['v31', 0.33],
+                    ['v33', 0.22],
+                    ['v32', 0.15]
+                ]
+            }, {
+                name: 'Hay',
+                id: 'Hay',
+                data: [
+                    ['v8.0', 2.56],
+                    ['v7.1', 0.77],
+                    ['v5.1', 0.42],
+                    ['v5.0', 0.3],
+                    ['v6.1', 0.29],
+                    ['v7.0', 0.26],
+                    ['v6.2', 0.17]
+                ]
+            }]
+        }
+    });
+});
+</script>
+<div id="container" style="width:80%; height:600px;"></div>
+</body>
+</html>

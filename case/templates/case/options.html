@@ -18,14 +18,14 @@
       <p>Click through to see detail for each dimension of the case.</p>
         <p> Make these into nice big buttons?</p>
         <p> 'Entries field' will be made dynamic</p>
-        <h3><a href="/case/options/scale/"> Scope and Scale</a> <span> 0 entries </span></h3>
-        <h3><a href="/case/options/delivery/"> Delivery</a> <span> 0 entries </span></h3>
-        <h3><a href="/case/options/speed/"> Speed</a> <span> 0 entries </span></h3>
-        <h3><a href="/case/options/fourth/"> Fourth Option</a><span> 0 entries </span> </h3>
-        <h3><a href="/case/options/fifth/"> Fifth Option</a> <span> 0 entries </span></h3>
+
+            {% for option, value in counts.items %}
+        <h3>    <a href="/case/options/{{ option }}/"> {{ option }}</a> <span> Entries: {{ value }} </span></h3>
+            {%  endfor %}
         {% endif %}
         <h2> Economic Case Output</h2>
-            <a href="/case/graph/">Summary output Graph</a>
+            <a href="/case/benefitsgraph/">Summary output Graph</a>
+            <a
 
     </div>
    {% endblock %}
