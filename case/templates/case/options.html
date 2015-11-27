@@ -16,16 +16,17 @@
             <p> And we should also have an  <a href="{% url 'case:options_new' dimension %}" class="top-menu"><span class="glyphicon glyphicon-plus">'add' button to add </span></a>a new one. </p>
         {% else %}
       <p>Click through to see detail for each dimension of the case.</p>
+            <!--
         <p> Make these into nice big buttons?</p>
-        <p> 'Entries field' will be made dynamic</p>
+        <p> 'Entries field' will be made dynamic</p> -->
 
             {% for option, value in counts.items %}
-        <h3>    <a href="/case/options/{{ option }}/"> {{ option }}</a> <span> Entries: {{ value }} </span></h3>
+        <h3>      <button type="button" id="button"><a href="/case/options/{{ option  }}/">{{ option  | capfirst }}</a> </button><span> Entries: {{ value }} </span></h3>
             {%  endfor %}
         {% endif %}
         <h2> Economic Case Output</h2>
-            <a href="/case/benefitsgraph/">Summary output Graph</a>
-            <a
+            <button type="button" id="button"><a href="/case/benefitsgraph/">Benefits Comparison Graph</a></button>
+            <button type="button" id="button"><a href="/case/summarygraph/">Summary Output Graph</a></button>
 
     </div>
    {% endblock %}
