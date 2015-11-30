@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^scoring_(?P<score_number>\d+)/$', 'case.views.scoring'),
     url(r'^benefitsgraph/$', 'case.views.benefitsgraph'),
     url(r'^summarygraph/$', 'case.views.summarygraph'),
-    #url(r'^score/(?P<option>[^/]+)/$', ('case.views.scoring')),
+    url(r'^score/(?P<option>[^/]+)/$', ('case.views.scoring')),
+    url(r'^test/$', 'case.views.wyswigeditor'),
     url(r'^', 'case.views.index'),
 )

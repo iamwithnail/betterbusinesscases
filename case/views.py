@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response, render, redirect, get_object_or_404
 from time import timezone
 # Create your views here.
-from .models import Option, OPTION_TYPES
+from .models import Option, OPTION_TYPES, Score
 
 def count_options():
     o = Option.objects.all()
@@ -70,26 +70,21 @@ def benefitsgraph(request):
 def summarygraph(request):
     return render(request, 'case/summarygraph.html',)
 
-def scoring(request, score_number):
-    """Toggle "like" for a single color, then refresh the color-list page."""
-    """color = None
-    try:
-        #There's only one object with this id, but this returns a list
-        #of length one. Get the first (index 0)
-        color = Color.objects.filter(id=color_id)[0]
-    except Color.DoesNotExist as e:
-        raise  ValueError("Unknown color.id=" + str(color_id) + ". Original error: " + str(e))
+def scoring(request, dimension):
+    from django.shortcuts import render
+    if not dimension:
+        return render(request, "case/scores_main.html", {"": 1})
+    else:
+        from .models import Option
+        scores = Scores.objects.filter(option_type=dimension)
 
-    print("pre-toggle:  color_id=" + str(color_id) + ", color.is_favorited=" + str(color.is_favorited) + "")
-
-    color.is_favorited = not color.is_favorited
-    color.save()  #Commit the change to the database
-
-    print("post-toggle: color_id=" + str(color_id) + ", color.is_favorited=" + str(color.is_favorited) + "")
-    """
+        return render(request, "case/options.html", {"options": options, "dimension": dimension})
     #Render the just-clicked-on like-button.
     return  render_to_response("case/scoring_" + score_number+".html")
 
+
+def wyswigeditor(request):
+    return render (request, "case/wyswigeditor.html")
 
 def index(request):
     return render_to_response('case/index.html')

@@ -11,9 +11,15 @@
         {% if dimension %}
             The options below will have an 'edit' button next to them.
         {% for option in options %}
-            <p><span>{{ option.strength }}</span> <span>{{ option.text }}</span> <a href="/case/options/{{ option.pk }}/edit/">Edit me</a></p>
+            <p>
+                <span>{{ option.strength | capfirst }}</span>
+                <span>{{ option.text |truncatewords:50 }}</span>
+                <button id="button">
+                    <a href="/case/options/{{ option.pk }}/edit/"> Edit me </a>
+                </button>
+            </p>
         {% endfor %}
-            <p> And we should also have an  <a href="{% url 'case:options_new' dimension %}" class="top-menu"><span class="glyphicon glyphicon-plus">'add' button to add </span></a>a new one. </p>
+            <button id="button>">  <a href="{% url 'case:options_new' dimension %}" class="top-menu"><span class="glyphicon glyphicon-plus">Add new options</span></a></button>
         {% else %}
       <p>Click through to see detail for each dimension of the case.</p>
             <!--
@@ -30,3 +36,14 @@
 
     </div>
    {% endblock %}
+
+<!-- make a link to score/<dimension>/<number> and then use that to pull up the details.
+After discussion with AB and SS, we need to have a table that displays all of them, so...
+
+For type in dimension:
+    get all the options
+    for option in options, go across the rows.
+
+Provide that over as a queryset ordered by dimension?
+  -->
+<!-- For each option, show the ones where there's no matching score -->

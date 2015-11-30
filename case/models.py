@@ -3,9 +3,9 @@ from django.db import models
 
 OPTION_TYPES = (
             ('scale', 'Scale and Scope'),
-            ('delivery', 'Delivery approaches'),
-            ('speed', 'Speed of Delivery'),
-            ('fourth', 'Fourth Option'),
+            ('delivery', 'Service Delivery approaches'),
+            ('speed', 'Speed of Delivery Implementation'),
+            ('solution', 'Solutions and approaches'),
             ('fifth', 'Fifth Option'))
 
 STRENGTH = (
