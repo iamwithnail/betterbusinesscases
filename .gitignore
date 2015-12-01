@@ -1,0 +1,7 @@
+.gitignore
+/migrations
+/case/migrations
+/color_liker/migrations/
+/env
+/psycopg2-2.6.1/
+*.pyc
