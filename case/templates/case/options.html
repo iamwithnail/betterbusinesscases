@@ -3,32 +3,55 @@
         <div class="wrapper" xmlns="http://www.w3.org/1999/html">
       <h1>Better Business Cases</h1>
         {% if dimension %}
-            <h2> {{ dimension }}</h2>
+            <h2> {{ dimension | capfirst }}</h2>
         {% else %}
             <h2>Summary Page</h2>
         {% endif %}
 
         {% if dimension %}
-            The options below will have an 'edit' button next to them.
+           <div>
+           <button id="button>">
+               <a href="/case/options/" class="top-menu">
+                   <span class="glyphicon glyphicon-plus">Main Menu
+                   </span>
+               </a>
+           </button>
+           </div>
         {% for option in options %}
-            <p>
-                <span>{{ option.strength | capfirst }}</span>
-                <span>{{ option.text |truncatewords:50 }}</span>
-                <button id="button">
-                    <a href="/case/options/{{ option.pk }}/edit/"> Edit me </a>
-                </button>
-            </p>
+
+                <div>
+                    <span>{{ option.strength | capfirst }}</span>
+                    <span>{{ option.text |truncatewords:100 }}</span>
+
+                    <div><button id="button">
+                        <a href="/case/options/{{ option.pk }}/"> View </a>
+                    </button>
+                        <button id="button">
+                        <a href="/case/options/{{ option.pk }}/edit/"> Edit </a>
+                    </button></div>
+                </div>
+            <div id="spacer"></br></div>
         {% endfor %}
-            <button id="button>">  <a href="{% url 'case:options_new' dimension %}" class="top-menu"><span class="glyphicon glyphicon-plus">Add new options</span></a></button>
+            <div>
+                <button id="button>">  <a href="{% url 'case:options_new' dimension %}" class="top-menu"><span class="glyphicon glyphicon-plus">Add new options</span></a></button>
+            </div>
         {% else %}
       <p>Click through to see detail for each dimension of the case.</p>
             <!--
         <p> Make these into nice big buttons?</p>
         <p> 'Entries field' will be made dynamic</p> -->
-
+        <table>
             {% for option, value in counts.items %}
-        <h3>      <button type="button" id="button"><a href="/case/options/{{ option  }}/">{{ option  | capfirst }}</a> </button><span> Entries: {{ value }} </span></h3>
+                <tr>
+                    <h3>
+                        <td><button type="button" id="button">
+                            <a href="/case/options/{{ option  }}/">{{ option  | capfirst }}</a>
+                        </button></td>
+                        <td><span> Entries: {{ value }} </span></td>
+                    </h3>
+                </tr>
             {%  endfor %}
+            </table>
         {% endif %}
         <h2> Economic Case Output</h2>
             <button type="button" id="button"><a href="/case/benefitsgraph/">Benefits Comparison Graph</a></button>

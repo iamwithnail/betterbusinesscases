@@ -53,7 +53,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'ajax_demo.urls'
+ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
     {
@@ -80,7 +80,7 @@ TEMPLATE_DIRS = (
     '../case/templates'
 )
 
-WSGI_APPLICATION = 'ajax_demo.wsgi.application'
+WSGI_APPLICATION = 'core.wsgi.application'
 
 
 # Database
