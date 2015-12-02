@@ -1,18 +1,17 @@
 {% extends 'case/base.html' %}
 
-{% block content %}
+  {% block content %}
     <h1>Enter new {{ option }} detail.</h1>
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-
-
+      {{ form.as_p }}
+      <button type="submit" class="save button">Save</button>
     </form>
-    {% if option %}
-    <a href="/case/options/{{ option }}/">
-    {% else %}
-        <a href="/case/options/">
-    {% endif %}
-            <button class="save btn btn-default">Return</button></a>
 
-{% endblock %}
+    {% if option %}
+      <a href="/case/options/{{ option }}/">
+    {% else %}
+      <a href="/case/options/">
+    {% endif %}
+
+    <button class="save button">Return</button></a>
+  {% endblock %}

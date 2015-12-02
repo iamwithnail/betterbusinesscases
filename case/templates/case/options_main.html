@@ -1,29 +1,29 @@
 {% extends 'case/base.html' %}
-    {% block content %}
-    <div class="wrapper">
-      <h1>Better Business Cases</h1>
-        {% if options %}
-        <h2>{{ options[0]. }}</h2>
-        {% else %}
-        {%  endif %}
-      <p>Here is some info about Dimension 1. What it means, what type of thing you should put for your minimum, intermediate and ambitious options, why your baseline option is needed. An idea of how much you should write for each box.</p>
-      <form action="{% url 'case:options' option.text %}" method="post" class="main">
-        <h3>Baseline</h3>
-
-        </form>
-        <h3>Minimum</h3>
-        <textarea id="1-minimum" placeholder="Fill in a brief description of your minimum option"></textarea>
-        <h3>Intermediate</h3>
-        <textarea id="1-intermediate" placeholder="Fill in a brief description of your intermediate option"></textarea>
-        <h3>Ambitious</h3>
-        <textarea id="1-ambitious" placeholder="Fill in a brief description of your ambitious option"></textarea>
-        <br>
-        <a href="/case/scoring_1/"><input value="Next" class="button"></a>
-        <!--needs some kind of submit action added but can't without a database & a server-side redirect -->
-        <br>
-      </form>
-    </div>
-   {% endblock %}
+  {% block content %}
+  <div class="wrapper">
+    <h1>Better Business Cases</h1>
+      {% if options %}
+          <h2>{{ options[0]. }}</h2>
+      {% else %}
+      {%  endif %}
+    
+    <p>Here is some info about Dimension 1. What it means, what type of thing you should put for your minimum, intermediate and ambitious options, why your baseline option is needed. An idea of how much you should write for each box.</p>
+    <form action="{% url 'case:options' option.text %}" method="post" class="main">
+      <h3>Baseline</h3>
+    </form>
+      <h3>Minimum</h3>
+      <textarea id="1-minimum" placeholder="Fill in a brief description of your minimum option"></textarea>
+      <h3>Intermediate</h3>
+      <textarea id="1-intermediate" placeholder="Fill in a brief description of your intermediate option"></textarea>
+      <h3>Ambitious</h3>
+      <textarea id="1-ambitious" placeholder="Fill in a brief description of your ambitious option"></textarea>
+      <br>
+      <a href="/case/scoring_1/"><input value="Next" class="button"></a>
+      <!--needs some kind of submit action added but can't without a database & a server-side redirect -->
+      <br>
+    </form>
+  </div>
+ {% endblock %}
 
 
 option_type = models.CharField(max_length=8, choices=OPTION_TYPES)

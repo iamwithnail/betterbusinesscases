@@ -1,6 +1,6 @@
 body {
-	background-color: #8fcb9b;
-	color: #22181C;
+	background-color: #fff;
+	color: #222;
 }
 
 a, p, textarea {
@@ -11,7 +11,6 @@ a, p, textarea {
 }
 
 a:focus, a:active, a:hover {
-	color: #0b6e4f;
 	text-decoration: underline;
 }
 
@@ -23,7 +22,6 @@ h1, h2, h3, h4, h5, table {
 	font-family: 'Arimo', sans-serif;
 	text-align: center;
 	font-weight: 700;
-	color: #0b6e4f;
 }
 
 h1 {
@@ -57,6 +55,9 @@ h5 {
 
 table {
 	font-weight: 200;
+	width: 90%;
+	text-align: left;
+	font-family: 'Droid Serif', serif;
 }
 
 hr {
@@ -75,23 +76,20 @@ li {
 	border: 1px;
 }
 
-.no-margin {
-	margin: 0;
-}
-
-.button {
+button {
 	clear: both;
 	text-align: center;
 	padding: 0.5em 1em;
 	margin: 0 auto 1em auto;
 	display: block;
 	color: #fff;
-	background-color: #8fcb9b;
-	border-color: #0b6e4f;
+	border-color: #222;
+	vertical-align: middle;
 }
 
 .button a:focus, a:hover, a:active {
 	text-decoration: none;
+	box-shadow: 1px 1px 0 0 5px #222;
 }
 
 .wrapper {
@@ -108,19 +106,32 @@ li {
 	padding: 0 2em;
 }
 
+#scale {
+	background-color: #fd151B;
+}
+
+#solution {
+	background-color: #ffb30f;
+}
+
+#delivery {
+	background-color: #849324;
+}
+
+#speed {
+	background-color: #437f97;
+}
+
+#fifth {
+	background-color: #01295f;
+}
+
 textarea {
 	width: 60%;
 	margin: 0 auto;
 	padding: 10px;
 	min-height: 150px;
-	border-color: #0b6e4f;
-}
-
-table {
-	width: 90%;
-	text-align: left;
-	font-weight: 400;
-	font-family: 'Droid Serif', serif;
+	border-color: #222;
 }
 
 th {
@@ -132,37 +143,5 @@ td {
 	text-align: center;
 	font-size: 14px;
 	padding: 3px 0;
-	color: #22181C;
+	color: #222;
 }
-
-#button {
-   border-top: 1px solid #000000;
-   background: #66a90f;
-   background: -webkit-gradient(linear, left top, left bottom, from(#3e7705), to(#66a90f));
-   background: -webkit-linear-gradient(top, #3e7705, #66a90f);
-   background: -moz-linear-gradient(top, #3e7705, #66a90f);
-   background: -ms-linear-gradient(top, #3e7705, #66a90f);
-   background: -o-linear-gradient(top, #3e7705, #66a90f);
-   padding: 8.5px 17px;
-   -webkit-border-radius: 10px;
-   -moz-border-radius: 10px;
-   border-radius: 10px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: white;
-   font-size: 14px;
-   font-family: Georgia, serif;
-   text-decoration: none;
-   vertical-align: middle;
-   }
-#button:hover {
-   border-top-color: #649b64;
-   background: #649b64;
-   color: #ccc;
-   }
-#button:active {
-   border-top-color: #1b435e;
-   background: #1b435e;
-   }
