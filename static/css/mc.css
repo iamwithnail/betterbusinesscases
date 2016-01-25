@@ -166,3 +166,24 @@ td {
    border-top-color: #1b435e;
    background: #1b435e;
    }
+
+
+.scale h1, h2, h3, h4, h5, a {
+    color: #fd151B ;
+}
+
+.solution h1, h2, h3, h4, h5, a {
+    color: #ffb30f ;
+}
+
+.delivery h1, h2, h3, h4, h5, a {
+    color: #849324 ;
+}
+
+.speed h1, h2, h3, h4, h5, a {
+    color: #437f97 ;
+}
+
+.fifth h1, h2, h3, h4, h5, a {
+    color: #01295f ;
+}

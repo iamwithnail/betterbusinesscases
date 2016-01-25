@@ -44,7 +44,7 @@
             {% for option, value in counts.items %}
                 <tr>
                     <h3>
-                        <td><button type="button" id="button">
+                        <td><button type="button" class="button {{ option }}">
                             <a href="/case/options/{{ option  }}/">{{ option  | capfirst }}</a>
                         </button></td>
                         <td><span> Entries: {{ value }} </span></td>

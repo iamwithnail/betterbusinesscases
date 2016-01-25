@@ -88,3 +88,10 @@ def wyswigeditor(request):
 
 def index(request):
     return render_to_response('case/index.html')
+
+
+for d in all_data['home']['shots_on_target']:
+    new_list.append(
+            (datetime.strptime(d, "%Y-%m-%d").date(),
+                    all_data['home']['shots_on_target'][d])
+    )

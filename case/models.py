@@ -6,7 +6,7 @@ OPTION_TYPES = (
             ('delivery', 'Service Delivery approaches'),
             ('speed', 'Speed of Delivery Implementation'),
             ('solution', 'Solutions and approaches'),
-            ('fifth', 'Fifth Option'))
+            ('funding', 'Funding and Affordability'))
 
 STRENGTH = (
     ('basic', 'Baseline, do-nothing option'),
