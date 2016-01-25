@@ -1,0 +1,3 @@
+Add routes for each segment in the list for editor
+Add the sortable bar as a sidebar (collapsable)   getbootstrap.com/javascript/#collapse
+Use the downloaded SB admin for Bootstrap base
