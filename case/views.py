@@ -89,9 +89,12 @@ def wyswigeditor(request):
 def index(request):
     return render_to_response('case/index.html')
 
+def editor(request):
+    return render(request, "case/editor.html")
 
-for d in all_data['home']['shots_on_target']:
-    new_list.append(
-            (datetime.strptime(d, "%Y-%m-%d").date(),
-                    all_data['home']['shots_on_target'][d])
-    )
+def base(request):
+    return render(request, "case/bootstrapbase.html")
+
+def divtest(request):
+    return render(request, "case/newbase.html")
+

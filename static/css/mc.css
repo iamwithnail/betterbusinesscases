@@ -187,3 +187,30 @@ td {
 .fifth h1, h2, h3, h4, h5, a {
     color: #01295f ;
 }
+
+.sidebar {
+	float: right;
+}
+
+.maincontainer {
+	float: left;
+}
+
+section {
+    width: 95%;
+    height: 200px;*/
+    background: aqua;
+    margin: 30px;
+    padding: 30px;
+}
+div#one {
+    width: 66%;
+    height: 200px;
+    background: red;
+    float: left;
+}
+div#two {
+    margin-left: 25%;
+    height: 200px;
+    background: black;
+}

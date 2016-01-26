@@ -8,111 +8,117 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Site CSS -->
+    <link rel="icon" href="favicon.ico">
+    <link href="/static/css/normalize.css" rel="stylesheet">
+    <link href="/static/css/mc.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Arimo:400,700|Droid+Serif' rel='stylesheet' type='text/css'>
+
 </head>
 
 
 <body>
 
-<div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-    <span class="sr-only">60% Complete</span>
-  </div>
-</div>
 
-<div class="alert alert-success" role="alert">Congratulations, you've just updated the OBC. </div>
 
+{% block maincontent %}     egd x
 Getting Started With Better Business Cases
+<div class="maincontainer">
+    <ul>
+             Better Business Cases comprise of the following five key components:
+              <li><!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#strategiccase">
+      Strategic Case
+    </button></li>
+    <li> <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#economiccase">
+      Economic Case
+    </button> </li>
+    <li> <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#commercialcase">
+    Commercial Case
+    </button>
+    </li>
+    <li><!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#financialcase">
+      Financial Case
+    </button></li>
+    <li> <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#managementcase">
+      Management Case
+    </button></li>
+    </ul>
 
-<ul>
-         Better Business Cases comprise of the following five key components:
-          <li><!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#strategiccase">
-  Strategic Case
-</button></li>
-<li> <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#economiccase">
-  Economic Case
-</button> </li>
-<li> <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#commercialcase">
-Commercial Case
-</button>
-</li>
-<li><!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#financialcase">
-  Financial Case
-</button></li>
-<li> <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#managementcase">
-  Management Case
-</button></li>
-</ul>
 
+    <!-- Modal -->
+    <div class="modal fade" id="strategiccase" tabindex="-1" role="dialog" aria-labelledby="strategiccaseLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="strategiccaseLabel">Contextual Help </h4>
+          </div>
+          <div class="modal-body">
 
-<!-- Modal -->
-<div class="modal fade" id="strategiccase" tabindex="-1" role="dialog" aria-labelledby="strategiccaseLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="strategiccaseLabel">Contextual Help </h4>
-      </div>
-      <div class="modal-body">
-
-<h3>The Strategic Case</h3>
-<p>The Strategic Case demonstrates that the spending proposal provides business synergy and strategic fit and is predicated upon a robust and evidence based case for change. This includes the rationale of why intervention is required, as well as a clear definition of outcomes and the potential scope for what is to be achieved.
-This strategic case requires the spending authority to demonstrate how the spending proposal fits in relation to national, regional and local policies, strategies and plans and furthers the required outcomes.
-It also requires the spending authority to demonstrate that the spending proposal has clear and concise spending objectives, which are specific, measurable, achievable, relevant and time constrained (SMART).
-The case for change must be based on a rigorous assessment of the issues (business needs) associated with the status quo (existing arrangements) and the potential scope of the proposed spend in relation to the anticipated benefits and potential risks.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+    <h3>The Strategic Case</h3>
+    <p>The Strategic Case demonstrates that the spending proposal provides business synergy and strategic fit and is predicated upon a robust and evidence based case for change. This includes the rationale of why intervention is required, as well as a clear definition of outcomes and the potential scope for what is to be achieved.
+    This strategic case requires the spending authority to demonstrate how the spending proposal fits in relation to national, regional and local policies, strategies and plans and furthers the required outcomes.
+    It also requires the spending authority to demonstrate that the spending proposal has clear and concise spending objectives, which are specific, measurable, achievable, relevant and time constrained (SMART).
+    The case for change must be based on a rigorous assessment of the issues (business needs) associated with the status quo (existing arrangements) and the potential scope of the proposed spend in relation to the anticipated benefits and potential risks.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div class="modal fade" id="economiccase" tabindex="-1" role="dialog" aria-labelledby="economiccaseLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="economiccaseLabel">Contextual Help </h4>
-      </div>
-      <div class="modal-body">
+    <div class="modal fade" id="economiccase" tabindex="-1" role="dialog" aria-labelledby="economiccaseLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="economiccaseLabel">Contextual Help </h4>
+          </div>
+          <div class="modal-body">
 
-<h3>The Economic Case</h3>
-<p>The main purpose of the Economic Case is to demonstrate that the spending proposal optimises public value (to the UK as a whole).</p>
-<p>It explains how this is achieved by, identifying and appraising a wide range of realistic and achievable options, known as the “long list”, in terms of how well they meet the spending objectives and critical success factors agreed for the scheme; and subjecting a reduced number of options, known as “the shortlist”, to cost benefit analysis (CBA).</p>
-<p>The key to a well scoped and planned scheme is the identification of the right range of options, or choices, in the first instance; because if the wrong options are appraised the scheme will be sub-optimal from the outset.</p>
-<p>To assist with the selection of the “long list”, the use of the “Options Framework” – a tool which helps identify the potential scope or range of services for the scheme is recommended, and in response to these, the potential service solutions, methods of service delivery and main choices for implementation and funding. From this analysis, we can distil a recommended direction of travel, or “preferred way forward” from which the short list may be drawn, including the “do nothing” and “do minimum” options, to be subjected cost benefit analysis (CBA).</p>
-<p>The CBA conducted in accordance with Green Book guidance quantifies in monetary terms as many of the costs and benefits to the UK as possible for each of the shortlisted options this effort should be proportionate to the scale and risk of the proposal. This generates a future profile of costs and benefits, which are then netted off against each other to provide cost(-)/benefit(+) figures that are discounted and summed to produce a figure for the Net Present Value (NPV) of each option. This analysis should also consider whether there are significant distributional affects on some groups within society and where relevant should quantify these.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+    <h3>The Economic Case</h3>
+    <p>The main purpose of the Economic Case is to demonstrate that the spending proposal optimises public value (to the UK as a whole).</p>
+    <p>It explains how this is achieved by, identifying and appraising a wide range of realistic and achievable options, known as the “long list”, in terms of how well they meet the spending objectives and critical success factors agreed for the scheme; and subjecting a reduced number of options, known as “the shortlist”, to cost benefit analysis (CBA).</p>
+    <p>The key to a well scoped and planned scheme is the identification of the right range of options, or choices, in the first instance; because if the wrong options are appraised the scheme will be sub-optimal from the outset.</p>
+    <p>To assist with the selection of the “long list”, the use of the “Options Framework” – a tool which helps identify the potential scope or range of services for the scheme is recommended, and in response to these, the potential service solutions, methods of service delivery and main choices for implementation and funding. From this analysis, we can distil a recommended direction of travel, or “preferred way forward” from which the short list may be drawn, including the “do nothing” and “do minimum” options, to be subjected cost benefit analysis (CBA).</p>
+    <p>The CBA conducted in accordance with Green Book guidance quantifies in monetary terms as many of the costs and benefits to the UK as possible for each of the shortlisted options this effort should be proportionate to the scale and risk of the proposal. This generates a future profile of costs and benefits, which are then netted off against each other to provide cost(-)/benefit(+) figures that are discounted and summed to produce a figure for the Net Present Value (NPV) of each option. This analysis should also consider whether there are significant distributional affects on some groups within society and where relevant should quantify these.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            <p>One fine body&hellip;</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 </div>
-<div class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+{% endblock %}
 
+{% block sidebar %}
+    {% include 'case/sortableside.html' %}
+{% endblock %}
 
 </body>
