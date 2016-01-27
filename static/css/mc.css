@@ -1,6 +1,16 @@
+
+/*** COLOURS ***/
+
+/*
+black for text: #212227;
+soft white for background: #f5f3f5;
+blue for buttons & headings: #233254;
+light blue for accent: #6a81a2;
+*/
+
 body {
-	background-color: #8fcb9b;
-	color: #22181C;
+	background-color: #f5f3f5;
+	color: #212227;
 }
 
 a, p, textarea {
@@ -11,19 +21,19 @@ a, p, textarea {
 }
 
 a:focus, a:active, a:hover {
-	color: #0b6e4f;
+	color: #6a81a2;
 	text-decoration: underline;
 }
 
 a {
-	color: #8fcb9b;
+	color: #233254;
 }
 
 h1, h2, h3, h4, h5, table {
 	font-family: 'Arimo', sans-serif;
 	text-align: center;
 	font-weight: 700;
-	color: #0b6e4f;
+	color: #233253;
 }
 
 h1 {
@@ -65,12 +75,7 @@ hr {
 	margin: 50px 0;
 }
 
-ul {
-	clear: both;
-}
-
 li {
-	float: left;
 	padding: 1em;
 	border: 1px;
 }
@@ -85,19 +90,28 @@ li {
 	padding: 0.5em 1em;
 	margin: 0 auto 1em auto;
 	display: block;
-	color: #fff;
-	background-color: #8fcb9b;
-	border-color: #0b6e4f;
+	color: #f5f3f5;
+	background-color: #233254;
+	border-color: #6a81a2;
+}
+
+.button a {
+	color: #6a81a2;
 }
 
 .button a:focus, a:hover, a:active {
 	text-decoration: none;
+	color: #6a81a2;
+}
+
+.button-fixed {
+	min-width: 150px;
 }
 
 .wrapper {
-	background-color: #fff;
+	background-color: #f5f3f5;
 	opacity: .9;
-	width: 90%;
+	width: 95%;
 	margin: 0 auto;
 	padding: 0 1em;
 }
@@ -113,7 +127,7 @@ textarea {
 	margin: 0 auto;
 	padding: 10px;
 	min-height: 150px;
-	border-color: #0b6e4f;
+	border-color: #6a81a2;
 }
 
 table {
@@ -125,19 +139,48 @@ table {
 
 th {
 	max-width: 40%;
-	font-family: Arimo;
+	font-family: 'Arimo';
 }
 
 td {
 	text-align: center;
 	font-size: 14px;
 	padding: 3px 0;
-	color: #22181C;
+	color: #212227;
 }
 
-#button {
-   border-top: 1px solid #000000;
-   background: #66a90f;
+
+/*** Content sections ***/
+
+.sidebar {
+	float: right;
+	width: 280px;
+	margin: 0 auto;
+}
+
+.maincontainer {
+	float: left;
+	width: 75%;
+	margin: 0 auto;
+}
+
+@media (max-width: 1210px) {
+	.maincontainer {
+		width: 100%;
+		clear: both;
+	}
+	.sidebar {
+		width: 50%;
+		margin: 0 auto;
+		clear: both;
+	}
+}
+
+/**** BUTTONS ****/
+
+/*.button-primary {
+   border-top: 1px solid #6a81a2;
+   background: #233254;
    background: -webkit-gradient(linear, left top, left bottom, from(#3e7705), to(#66a90f));
    background: -webkit-linear-gradient(top, #3e7705, #66a90f);
    background: -moz-linear-gradient(top, #3e7705, #66a90f);
@@ -153,20 +196,65 @@ td {
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: white;
    font-size: 14px;
-   font-family: Georgia, serif;
+   font-family: 'Droid Serif', serif;
    text-decoration: none;
    vertical-align: middle;
-   }
-#button:hover {
+   } */
+
+/* duplicated elsewhere */
+.button {
+	clear: both;
+	text-align: center;
+	padding: 0.5em 1em;
+	margin: 0 auto 1em auto;
+	display: block;
+	color: #f5f3f5;
+	background-color: #233254;
+	border-color: #6a81a2;
+}
+
+/*
+.button-primary:hover {
    border-top-color: #649b64;
    background: #649b64;
    color: #ccc;
    }
-#button:active {
+
+.button-primary:active {
    border-top-color: #1b435e;
    background: #1b435e;
    }
 
+.button-secondary {
+
+} */
+
+/**** list types ****/
+
+.case-components > li {
+	display: block;
+	clear: both;
+}
+
+.sortable {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sortable li {
+	margin: 3px;
+	padding: 0.4em 1.5em;
+	font-size: 1.4em;
+	display: block;
+}
+
+.sortable li span {
+	position: absolute;
+	margin-left: -1.3em;
+}
+
+/** I think these are obselete **/
 
 .scale h1, h2, h3, h4, h5, a {
     color: #fd151B ;
@@ -188,17 +276,10 @@ td {
     color: #01295f ;
 }
 
-.sidebar {
-	float: right;
-}
-
-.maincontainer {
-	float: left;
-}
 
 section {
     width: 95%;
-    height: 200px;*/
+    height: 200px;
     background: aqua;
     margin: 30px;
     padding: 30px;
@@ -214,3 +295,4 @@ div#two {
     height: 200px;
     background: black;
 }
+
