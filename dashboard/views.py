@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response, render, redirect, get_object_or_404
-
+import pygal
 def benefitsgraph(request):
     return render(request, 'dashboard/benefitsgraph.html',)
 
@@ -18,7 +18,7 @@ def capital_costs(request):
     this_function_name = sys._getframe().f_code.co_name
     from excelmanager import get_cell_range
     #capital_costs_data = get_cell_range(0, 1, 5, 3)
-    import pygal
+
     line_chart = pygal.Bar(width=500, height=500, explicit_size=True)
     line_chart.title = 'Capital Costs by organisation'
     line_chart.x_labels = map(str, range(2016, 2020))
@@ -41,6 +41,7 @@ def revenue(request):
 
     line_chart.render_to_file('static/img/graphs/'+this_function_name+'.svg')
     return render(request, 'dashboard/graphbase.html', {"filename": this_function_name})
+
 
 """
 
