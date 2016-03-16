@@ -40,7 +40,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'color_liker',
     'case',
-    'spreadsheet'
+    'spreadsheet',
+    'dashboard',
+    'highcharts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -116,6 +118,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+SPREADSHEET_MAIN = 'summarydata.xlsx'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = ''

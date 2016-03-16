@@ -296,3 +296,6 @@ div#two {
     background: black;
 }
 
+.dash-item {
+	display: inline-block;
+}

@@ -1,3 +1,18 @@
 Add routes for each segment in the list for editor
 Add the sortable bar as a sidebar (collapsable)   getbootstrap.com/javascript/#collapse
 Use the downloaded SB admin for Bootstrap base
+
+Work out saving the editor text with JQuery
+List of dashboard pages:
+    Switching point: qualitative benefit (line)
+    Switching point: non-financial risk (line)
+    Switching point: NPV
+    Comparison of shortlisted options: NPV/Benefit Score/Risk Score
+    Value for Money  - OPtions Analysis (see bebenefits graph for template)
+    Capital Costs by Organisation
+    Total PCC Revenue
+    Option 3 Cost Categories (See summary graph)
+    Funding Envelope
+
+Google Sheets interaction
+    Sheet changes feed.

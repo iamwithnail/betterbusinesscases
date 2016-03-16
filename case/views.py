@@ -63,12 +63,7 @@ def options_detail(request, pk):
     return render(request, 'case/option_detail.html', {'option': option})
 
 
-def benefitsgraph(request):
-    return render(request, 'case/benefitsgraph.html',)
 
-
-def summarygraph(request):
-    return render(request, 'case/summarygraph.html',)
 
 def scoring(request, dimension):
     from django.shortcuts import render
@@ -81,6 +76,7 @@ def scoring(request, dimension):
         return render(request, "case/options.html", {"options": options, "dimension": dimension})
     #Render the just-clicked-on like-button.
     return  render_to_response("case/scoring_" + score_number+".html")
+
 
 
 def wyswigeditor(request):
